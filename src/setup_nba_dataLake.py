@@ -117,6 +117,12 @@ def configure_athena():
     except Exception as e:
         print(f"Error configuring Athena: {e}")
 
+# Note: This function only creates a database in Athena.
+# However, we will not use this Athena database in this project.
+# Instead, we will query the Glue database directly in Athena, since AWS Glue Catalog 
+# already holds the table schema and references the S3 data.
+# If needed, an Athena table can be created to reference the Glue table schema explicitly.
+
 
 def main():
     create_S3_bucket_if_not_exists()
